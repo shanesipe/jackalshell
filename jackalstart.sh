@@ -2,17 +2,14 @@
 
 #update package lists
 
-sudo apt update
+apt update
 
-sudo apt upgrade
+apt upgrade
 
 #Install dependencies
 
-sudo apt install build-essential lz4 jq -y
-
-GOVER=$(curl https://go.dev/VERSION?m=text)
-wget https://golang.org/dl/${GOVER}.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf ${GOVER}.linux-amd64.tar.gz
+apt install build-essential lz4 jq -y
+snap install go --classic
 
 # Add Go to .profile
 echo '# add environmental variables for Go' >> ~/.profile
